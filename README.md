@@ -11,7 +11,7 @@ FirstData
 
                     string xml_string = Newtonsoft.Json.JsonConvert.SerializeObject(
                         new { 
-                            getway_id = "AD8549-05",
+                            gateway_id = "AD8549-05",
                             password = "ts8by19q",
                             transaction_type = "00",
                             amount = 101,
