@@ -1,14 +1,13 @@
-FirstData
+Working sample for FirstData e4 web api
+
+JSON format, search for c# sample code to get sample with XML request
 =========
 
             string json_string = "{\"gateway_id\":\"AD8549-05\",\"password\":\"ts8by19q\",\"transaction_type\":\"00\",\"amount\":101,\"cardholder_name\":\"Allen Abc\",\"cc_number\":\"5454545454545454\",\"cc_expiry\":\"0315\",\"cc_verification_str2\":\"123\"}";
 
             //SHA1 hash on XML string
-            //ASCIIEncoding encoder = new ASCIIEncoding();
-            //byte[] json_byte = encoder.GetBytes(json_string);
-            byte[] json_byte = Encoding.ASCII.GetBytes(json_string);
-            //UTF8Encoding encoder = new UTF8Encoding();
-            //byte[] json_byte = Encoding.UTF8.GetBytes(json_string);
+            ASCIIEncoding encoder = new ASCIIEncoding();
+            byte[] json_byte = encoder.GetBytes(json_string);
 
 
             SHA1CryptoServiceProvider sha1_crypto = new SHA1CryptoServiceProvider();
@@ -19,7 +18,7 @@ FirstData
             //assign values to hashing and header variables
             string method = "POST\n";
             //string type = "application/xml\n";//REST XML
-            string type = "application/json\n";//REST XML
+            string type = "application/json; charset=UTF-8\n";//REST XML
             string time = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
             string url = "/transaction/v12";
             string keyID = "43490";//key ID
